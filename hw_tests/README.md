@@ -15,3 +15,10 @@ three-boot sequence:
 1. Send `S` to save 1 V / 2 V, then remove and restore all power.
 2. Send `Z` to verify 1 V / 2 V and save zero, then power cycle again.
 3. Send `V` to verify that zero was restored.
+
+`04_qt_tester` is the automatic production test for the GP8403 QT Tester PCB
+and an Arduino Uno. The fixture drives the DUT address pins from D5, D4, and D3;
+measures VOUT0 and VOUT1 on A1 and A2 through equal 10 kOhm dividers; measures
+the boosted 12 V rail on A3 through a 10 kOhm / 1 kOhm divider; drives the green
+pass LED from D12; and drives the buzzer from D11. Press the tester reset button
+to test the next board. This test intentionally does not write NVM.
